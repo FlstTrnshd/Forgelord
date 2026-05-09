@@ -65,11 +65,20 @@ func hammer_clicked():
 func craft(_index: int = 0):
 	var count = get_occupied_count()
 	var result_name = recipes[count]
+	# Read metal type before freeing ingots
+	var ingot_metal = 0
+	for slot in slots:
+		if slot["occupant"] != null:
+			ingot_metal = slot["occupant"].metal_type
+			break
 	for slot in slots:
 		if slot["occupant"] != null:
 			slot["occupant"].queue_free()
 			slot["occupant"] = null
 	$CraftIcon.hide()
 	$CraftIcon/SubViewportContainer.hide()
+	var btn = $CraftIcon/SubViewportContainer/CraftPanel/CraftButton
+	if btn.pressed.is_connected(craft):
+		btn.pressed.disconnect(craft)
 	get_parent().exit_anvil_view()
-	get_parent().spawn_item(_anvil.global_position + Vector3.UP * snap_height, result_name)  # 👈 Use _anvil
+	get_parent().spawn_item(_anvil.global_position + Vector3.UP * snap_height, result_name, ingot_metal)

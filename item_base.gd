@@ -14,7 +14,6 @@ var sharpness: float = 0.0
 var balance: float = 0.0
 var metal_type: MetalType = MetalType.IRON
 
-# Material modifiers — tweak these values to balance your economy
 const METAL_MODIFIERS: Dictionary = {
 	MetalType.IRON:   {"strength": 1.0, "sharpness": 0.8},
 	MetalType.STEEL:  {"strength": 1.2, "sharpness": 1.2},

@@ -1,0 +1,14 @@
+CSGBox3D
+StaticBody3D
+Label
+CenterContainer
+CanvasLayer
+CollisionShape3D
+Camera3D
+CharacterBody3D
+Button
+SubViewportContainer
+OptionButton
+SubViewport
+MeshInstance3D
+OmniLight3D
