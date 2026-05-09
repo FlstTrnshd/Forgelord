@@ -1,0 +1,111 @@
+[gd_scene load_steps=15 format=3 uid="uid://deod0mu1518ub"]
+
+[ext_resource type="Script" uid="uid://jiqewv4q47hw" path="res://main.gd" id="1_glv2v"]
+[ext_resource type="PackedScene" uid="uid://yi8xhl64jf0g" path="res://ingot.tscn" id="2_uu6xs"]
+[ext_resource type="Script" uid="uid://b1lhviqg2ccki" path="res://anvil.gd" id="3_r0du0"]
+[ext_resource type="Script" uid="uid://ekwqmemgr8qq" path="res://craft_icon.gd" id="4_cm0pq"]
+[ext_resource type="Script" uid="uid://ctexjgd2dgvrm" path="res://item_shelf.gd" id="5_fos0i"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r0du0"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cm0pq"]
+albedo_color = Color(0.15127608, 0.15127608, 0.15127608, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_r0du0"]
+material = SubResource("StandardMaterial3D_cm0pq")
+
+[sub_resource type="GDScript" id="GDScript_fos0i"]
+script/source = "extends MeshInstance3D
+"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cm0pq"]
+size = Vector3(0.495, 0.175, 0.53)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cm0pq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fos0i"]
+next_pass = SubResource("ShaderMaterial_cm0pq")
+albedo_color = Color(0.050375096, 0.06985552, 0.063539796, 1)
+metallic_specular = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fos0i"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3dxm6"]
+next_pass = SubResource("ShaderMaterial_fos0i")
+albedo_color = Color(0.2747506, 0.15340286, 0.06024658, 1)
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_glv2v")
+
+[node name="PlayerCam" type="Camera3D" parent="."]
+fov = 60.0
+
+[node name="Ingot" parent="." instance=ExtResource("2_uu6xs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7178836, -2.647586)
+
+[node name="Light" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 1, 1, 0)
+light_energy = 16.0
+
+[node name="Anvil" type="CSGBox3D" parent="." groups=["Anvil"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, -1.265)
+size = Vector3(3, 1, 1)
+material = SubResource("StandardMaterial3D_r0du0")
+script = ExtResource("3_r0du0")
+
+[node name="CraftIcon" type="StaticBody3D" parent="Anvil"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1381397, 0.63049364, 0.3304278)
+script = ExtResource("4_cm0pq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Anvil/CraftIcon"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -0.31043577, -0.2118836)
+mesh = SubResource("BoxMesh_r0du0")
+script = SubResource("GDScript_fos0i")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Anvil/CraftIcon"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.09363043, -0.21309996)
+shape = SubResource("BoxShape3D_cm0pq")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Anvil/CraftIcon"]
+offset_left = 1.0
+offset_top = 3.0
+offset_right = 513.0
+offset_bottom = 515.0
+
+[node name="CraftPanel" type="SubViewport" parent="Anvil/CraftIcon/SubViewportContainer"]
+handle_input_locally = false
+render_target_update_mode = 4
+
+[node name="OptionButton" type="OptionButton" parent="Anvil/CraftIcon/SubViewportContainer/CraftPanel"]
+offset_right = 32.0
+offset_bottom = 20.0
+
+[node name="CraftButton" type="Button" parent="Anvil/CraftIcon/SubViewportContainer/CraftPanel"]
+offset_top = 57.0
+offset_right = 8.0
+offset_bottom = 65.0
+text = "Craft
+"
+
+[node name="Ingot2" parent="." instance=ExtResource("2_uu6xs")]
+transform = Transform3D(1.071, 0, 0, 0, 1.071, 0, 0, 0, 1, 1, 0.7050599, -2.647586)
+
+[node name="Ingot3" parent="." instance=ExtResource("2_uu6xs")]
+transform = Transform3D(1.071, 0, 0, 0, 1.071, 0, 0, 0, 1, -1, 0.7099277, -2.6539977)
+
+[node name="Wall_Main" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.0397124)
+size = Vector3(10, 5, 0.2)
+material = SubResource("StandardMaterial3D_fos0i")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Wall_Main"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.49074602, 0.24300444)
+size = Vector3(4, 0.2, 1)
+material = SubResource("StandardMaterial3D_3dxm6")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Wall_Main" groups=["ItemShelf"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.41463137, 0.27874327)
+size = Vector3(4, 0.2, 1)
+material = SubResource("StandardMaterial3D_3dxm6")
+script = ExtResource("5_fos0i")
