@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://deod0mu1518ub"]
+[gd_scene load_steps=18 format=3 uid="uid://deod0mu1518ub"]
 
 [ext_resource type="Script" uid="uid://jiqewv4q47hw" path="res://main.gd" id="1_glv2v"]
 [ext_resource type="Script" uid="uid://b1lhviqg2ccki" path="res://anvil.gd" id="3_r0du0"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://hurs2dcyev1t" path="res://Iron_Shelf.gd" id="4_fos0i"]
 [ext_resource type="Script" uid="uid://ctexjgd2dgvrm" path="res://item_shelf.gd" id="5_fos0i"]
 [ext_resource type="PackedScene" uid="uid://bmvt5oabcv7u0" path="res://ingot_inv.tscn" id="6_3dxm6"]
+[ext_resource type="Script" uid="uid://c1arp2cuv6fps" path="res://back_door.gd" id="7_lgr22"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lgr22"]
 albedo_color = Color(0.096204735, 0.09620475, 0.096204735, 1)
@@ -36,18 +37,24 @@ metallic_specular = 0.0
 next_pass = SubResource("ShaderMaterial_fos0i")
 albedo_color = Color(0.2747506, 0.15340286, 0.06024658, 1)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_trn2v"]
+albedo_color = Color(0.503528, 0.2599565, 0.007635703, 1)
+
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_glv2v")
 
 [node name="Light" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 1, 1, 0)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 1, 2.4216824, -6.214371e-08)
 light_energy = 16.0
+light_size = 1.0
+omni_range = 15.31322
 
 [node name="Anvil" type="StaticBody3D" parent="." groups=["Anvil"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, -1.265)
 script = ExtResource("3_r0du0")
 
 [node name="Anvil" type="CSGBox3D" parent="Anvil"]
+use_collision = true
 size = Vector3(3, 1, 1)
 material = SubResource("StandardMaterial3D_lgr22")
 
@@ -110,3 +117,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6754532, -0.41463137, 0.343
 size = Vector3(4, 0.2, 0.35)
 material = SubResource("StandardMaterial3D_3dxm6")
 script = ExtResource("5_fos0i")
+
+[node name="BackDoor" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.049743652, -1.0222282, 2.805259)
+use_collision = true
+size = Vector3(0.9005127, 1.9824219, 0.19921875)
+material = SubResource("StandardMaterial3D_trn2v")
+script = ExtResource("7_lgr22")

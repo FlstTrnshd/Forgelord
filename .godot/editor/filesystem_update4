@@ -1,4 +1,3 @@
-res://ingot.tscn
-res://anvil.gd
-res://ingot.gd
-res://item_base.gd
+res://Main.tscn
+res://Kingdoms.gd
+res://World_Clock.gd

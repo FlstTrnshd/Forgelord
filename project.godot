@@ -18,6 +18,8 @@ config/icon="res://icon.svg"
 [autoload]
 
 PlayerInventory="*res://Player_Inventory.gd"
+WorldClock="*res://World_Clock.gd"
+Kingdoms="*res://Kingdoms.gd"
 
 [input]
 

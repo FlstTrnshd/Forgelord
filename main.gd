@@ -27,15 +27,17 @@ func _ready():
 	original_pos = cam.global_position
 	original_rot = cam.rotation
 
-func spawn_item(pos: Vector3, item_name: String):
+func spawn_item(pos: Vector3, item_name: String, ingot_metal):
 	if ITEM_SCENES.has(item_name):
 		var item = ITEM_SCENES[item_name].instantiate()
 		$Anvil.add_child(item)
 		item.global_position = pos
+		item.metal_type = ingot_metal  # 👈 Set on the item
 	elif INGOT_TYPES.has(item_name):
 		var item = INGOT_TYPES[item_name].instantiate()
 		$StaticBody3D/Wall_Main/CSGBox3D.add_child(item)
 		item.global_position = pos
+		item.metal_type = ingot_metal  # 👈 Set on the item
 	else:
 		push_error("No scene found for: " + item_name)
 
