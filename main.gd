@@ -16,6 +16,7 @@ const INGOT_TYPES = {
 	"Iron_Ingot": preload("res://ingot.tscn")
 }
 const PlayerScene = preload("res://character_controller.tscn")  # 👈 const not var
+const CustomerCapsule = preload("res://customer_capsule.tscn")
 var player = null  # 👈 Holds the instance
 var cam: Camera3D = null
 
@@ -26,6 +27,11 @@ func _ready():
 	cam = player.get_camera()
 	original_pos = cam.global_position
 	original_rot = cam.rotation
+	WorldClock.customer_ready.connect(_on_customer_ready)
+
+func _on_customer_ready():
+	var capsule = CustomerCapsule.instantiate()
+	add_child(capsule)
 
 func spawn_item(pos: Vector3, item_name: String, ingot_metal):
 	if ITEM_SCENES.has(item_name):

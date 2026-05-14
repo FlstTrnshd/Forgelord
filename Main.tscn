@@ -98,8 +98,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5821457, -1.4850755, -0.740
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
 [node name="Floor" type="CSGBox3D" parent="StaticBody3D"]
-transform = Transform3D(9.91542, 0, 0, 0, 1, 0, 0, 0, 6.2279787, 0, -2.5035608, 0)
+transform = Transform3D(9.91542, 0, 0, 0, 1, 0, 0, 0, 6.2279787, 0.24689436, -2.5035608, 3.7708426)
 use_collision = true
+size = Vector3(0.96643066, 1, 2.2109375)
 
 [node name="Wall_Main" type="CSGBox3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.0397124)
@@ -119,7 +120,7 @@ material = SubResource("StandardMaterial3D_3dxm6")
 script = ExtResource("5_fos0i")
 
 [node name="BackDoor" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.049743652, -1.0222282, 2.805259)
+transform = Transform3D(-0.001745386, 0, -0.99999845, 0, 1, 0, 0.99999845, 0, -0.001745386, -4.3664417, -1.0222282, -0.06508207)
 use_collision = true
 size = Vector3(0.9005127, 1.9824219, 0.19921875)
 material = SubResource("StandardMaterial3D_trn2v")

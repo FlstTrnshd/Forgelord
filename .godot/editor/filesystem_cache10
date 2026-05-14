@@ -1,5 +1,5 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1778609219
+::res://::1778784306
 anvil.gd::GDScript::4234501739410415332::1778400484::0::1::::<>StaticBody3D<><>0<>0<><>::
 back_door.gd::GDScript::6598811699918706412::1778405337::0::1::::<>CSGBox3D<><>0<>0<><>::
 character_controller.tscn::PackedScene::7124839245170544981::1778400484::0::1::::<><><>0<>0<><>::uid://dax12dluj00ce::::res://player_controller.gd
@@ -16,7 +16,7 @@ item_base.gd::GDScript::782425273310688167::1778400484::0::1::::ItemBase<>Static
 item_shelf.gd::GDScript::6116099791509369506::1778400484::0::1::::<>CSGBox3D<><>0<>0<><>::
 Kingdoms.gd::GDScript::3352643863126060057::1778494234::0::1::::<>Node<><>0<>0<><>::
 main.gd::GDScript::649194419129434316::1778400810::0::1::::<>Node3D<><>0<>0<><>::
-Main.tscn::PackedScene::7469146172412953245::1778494753::0::1::::<><><>0<>0<><>::uid://jiqewv4q47hw::::res://main.gd<>uid://b1lhviqg2ccki::::res://anvil.gd<>uid://ekwqmemgr8qq::::res://craft_icon.gd<>uid://hurs2dcyev1t::::res://Iron_Shelf.gd<>uid://ctexjgd2dgvrm::::res://item_shelf.gd<>uid://bmvt5oabcv7u0::::res://ingot_inv.tscn<>uid://c1arp2cuv6fps::::res://back_door.gd
+Main.tscn::PackedScene::7469146172412953245::1778784306::0::1::::<><><>0<>0<><>::uid://jiqewv4q47hw::::res://main.gd<>uid://b1lhviqg2ccki::::res://anvil.gd<>uid://ekwqmemgr8qq::::res://craft_icon.gd<>uid://hurs2dcyev1t::::res://Iron_Shelf.gd<>uid://ctexjgd2dgvrm::::res://item_shelf.gd<>uid://bmvt5oabcv7u0::::res://ingot_inv.tscn<>uid://c1arp2cuv6fps::::res://back_door.gd
 player_controller.gd::GDScript::7208369773154684356::1778400484::0::1::::<>CharacterBody3D<><>0<>0<><>::
 Player_Inventory.gd::GDScript::3576174477843425051::1778400484::0::1::::<>Node<><>0<>0<><>::
 short_sword.gd::GDScript::2555926414001333246::1778400484::0::1::::<>ItemBase<><>0<>0<><>::
