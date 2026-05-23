@@ -1,7 +1,4 @@
-res://Main.tscn
-res://Player_Status.gd
-res://World_Clock.gd
-res://Contracts.gd
-res://main.gd
-res://CustomerCapsule.gd
 res://Customer_Capsule.tscn
+res://Main.tscn
+res://CustomerCapsule.gd
+res://main.gd

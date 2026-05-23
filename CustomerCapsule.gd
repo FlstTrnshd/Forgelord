@@ -1,7 +1,7 @@
 class_name CustomerCapsule
 extends CharacterBody3D
 
-const WEAPON_TYPES = ["Sword", "Axe", "Dagger", "Spear"]
+const WEAPON_TYPES = ["Spear", "ShortSword", "GreatSword"]
 const WEAPON_MATERIALS = ["Iron"]
 
 var contract: Contracts

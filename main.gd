@@ -30,8 +30,9 @@ func _ready():
 	WorldClock.customer_ready.connect(_on_customer_ready)
 
 func _on_customer_ready():
-	var capsule = CustomerCapsule.instantiate()
-	add_child(capsule)
+	print("yipee")
+	#var capsule = CustomerCapsule.instantiate()
+	#add_child(capsule)
 
 func spawn_item(pos: Vector3, item_name: String, ingot_metal):
 	if ITEM_SCENES.has(item_name):

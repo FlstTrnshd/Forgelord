@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://deod0mu1518ub"]
+[gd_scene format=3 uid="uid://deod0mu1518ub"]
 
 [ext_resource type="Script" uid="uid://jiqewv4q47hw" path="res://main.gd" id="1_glv2v"]
 [ext_resource type="Script" uid="uid://b1lhviqg2ccki" path="res://anvil.gd" id="3_r0du0"]
@@ -40,86 +40,88 @@ albedo_color = Color(0.2747506, 0.15340286, 0.06024658, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_trn2v"]
 albedo_color = Color(0.503528, 0.2599565, 0.007635703, 1)
 
-[node name="Node3D" type="Node3D"]
+[node name="Node3D" type="Node3D" unique_id=1443291802]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9645667, 0)
 script = ExtResource("1_glv2v")
 
-[node name="Light" type="OmniLight3D" parent="."]
+[node name="Light" type="OmniLight3D" parent="." unique_id=409198080]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 1, 2.4216824, -6.214371e-08)
 light_energy = 16.0
 light_size = 1.0
 omni_range = 15.31322
 
-[node name="Anvil" type="StaticBody3D" parent="." groups=["Anvil"]]
+[node name="Anvil" type="StaticBody3D" parent="." unique_id=2082966800 groups=["Anvil"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, -1.265)
 script = ExtResource("3_r0du0")
 
-[node name="Anvil" type="CSGBox3D" parent="Anvil"]
+[node name="Anvil" type="CSGBox3D" parent="Anvil" unique_id=394178417]
 use_collision = true
 size = Vector3(3, 1, 1)
 material = SubResource("StandardMaterial3D_lgr22")
 
-[node name="CraftIcon" type="StaticBody3D" parent="Anvil"]
+[node name="CraftIcon" type="StaticBody3D" parent="Anvil" unique_id=141154277]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1381397, 0.63049364, 0.42356014)
 script = ExtResource("4_cm0pq")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Anvil/CraftIcon"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Anvil/CraftIcon" unique_id=157381751]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -0.31043577, -0.2118836)
 mesh = SubResource("BoxMesh_r0du0")
 script = SubResource("GDScript_fos0i")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Anvil/CraftIcon"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Anvil/CraftIcon" unique_id=860376231]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.09363043, -0.21309996)
 shape = SubResource("BoxShape3D_cm0pq")
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="Anvil/CraftIcon"]
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Anvil/CraftIcon" unique_id=593891284]
 offset_left = 1.0
 offset_top = 3.0
 offset_right = 513.0
 offset_bottom = 515.0
+metadata/_edit_use_anchors_ = true
 
-[node name="CraftPanel" type="SubViewport" parent="Anvil/CraftIcon/SubViewportContainer"]
+[node name="CraftPanel" type="SubViewport" parent="Anvil/CraftIcon/SubViewportContainer" unique_id=185401710]
 handle_input_locally = false
 render_target_update_mode = 4
 
-[node name="OptionButton" type="OptionButton" parent="Anvil/CraftIcon/SubViewportContainer/CraftPanel"]
+[node name="OptionButton" type="OptionButton" parent="Anvil/CraftIcon/SubViewportContainer/CraftPanel" unique_id=1974869935]
 offset_right = 32.0
 offset_bottom = 20.0
 
-[node name="CraftButton" type="Button" parent="Anvil/CraftIcon/SubViewportContainer/CraftPanel"]
+[node name="CraftButton" type="Button" parent="Anvil/CraftIcon/SubViewportContainer/CraftPanel" unique_id=958019625]
 offset_top = 57.0
 offset_right = 8.0
 offset_bottom = 65.0
 text = "Craft
 "
 
-[node name="IngotInv" parent="." instance=ExtResource("6_3dxm6")]
+[node name="IngotInv" parent="." unique_id=1095623684 instance=ExtResource("6_3dxm6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5821457, -1.4850755, -0.740964)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1523648143]
 
-[node name="Floor" type="CSGBox3D" parent="StaticBody3D"]
+[node name="Floor" type="CSGBox3D" parent="StaticBody3D" unique_id=1029831955]
 transform = Transform3D(9.91542, 0, 0, 0, 1, 0, 0, 0, 6.2279787, 0.24689436, -2.5035608, 3.7708426)
 use_collision = true
 size = Vector3(0.96643066, 1, 2.2109375)
 
-[node name="Wall_Main" type="CSGBox3D" parent="StaticBody3D"]
+[node name="Wall_Main" type="CSGBox3D" parent="StaticBody3D" unique_id=1179367652]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.0397124)
 size = Vector3(10, 5, 0.2)
 material = SubResource("StandardMaterial3D_fos0i")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="StaticBody3D/Wall_Main" groups=["iron_shelf"]]
+[node name="CSGBox3D" type="CSGBox3D" parent="StaticBody3D/Wall_Main" unique_id=1719868704 groups=["iron_shelf"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.49074602, 0.24300444)
 size = Vector3(4, 0.2, 1)
 material = SubResource("StandardMaterial3D_3dxm6")
 script = ExtResource("4_fos0i")
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="StaticBody3D/Wall_Main" groups=["ItemShelf"]]
+[node name="CSGBox3D2" type="CSGBox3D" parent="StaticBody3D/Wall_Main" unique_id=1697448188 groups=["ItemShelf"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6754532, -0.41463137, 0.34325182)
 size = Vector3(4, 0.2, 0.35)
 material = SubResource("StandardMaterial3D_3dxm6")
 script = ExtResource("5_fos0i")
 
-[node name="BackDoor" type="CSGBox3D" parent="."]
+[node name="BackDoor" type="CSGBox3D" parent="." unique_id=2064401061]
 transform = Transform3D(-0.001745386, 0, -0.99999845, 0, 1, 0, 0.99999845, 0, -0.001745386, -4.3664417, -1.0222282, -0.06508207)
 use_collision = true
 size = Vector3(0.9005127, 1.9824219, 0.19921875)
