@@ -2,3 +2,14 @@ res://Customer_Capsule.tscn
 res://Main.tscn
 res://CustomerCapsule.gd
 res://main.gd
+res://Interaction_Manager.gd
+res://Item_Spawner.gd
+res://Anvil.tscn
+res://Store.tscn
+res://anvil.gd
+res://WeaponData.gd
+res://weapon.gd
+res://weapon.tscn
+res://short_sword.tres
+res://spear_head.tres
+res://great_sword.tres

@@ -25,6 +25,10 @@ PlayerStatus="*res://Player_Status.gd"
 WorldClock="*res://World_Clock.gd"
 Kingdoms="*res://Kingdoms.gd"
 
+[global_group]
+
+Main=""
+
 [input]
 
 ui_accept={

@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://dmikq1na2j3po"]
+
+[ext_resource type="Script" uid="uid://hurs2dcyev1t" path="res://Iron_Shelf.gd" id="1_gsa4e"]
+[ext_resource type="Script" uid="uid://ctexjgd2dgvrm" path="res://item_shelf.gd" id="2_4m35y"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cm0pq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y5j2w"]
+next_pass = SubResource("ShaderMaterial_cm0pq")
+albedo_color = Color(0.050375096, 0.06985552, 0.063539796, 1)
+metallic_specular = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fos0i"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8qgih"]
+next_pass = SubResource("ShaderMaterial_fos0i")
+albedo_color = Color(0.2747506, 0.15340286, 0.06024658, 1)
+
+[node name="Store" type="Node3D" unique_id=531010881]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1426563704 groups=["Main"]]
+
+[node name="Floor" type="CSGBox3D" parent="StaticBody3D" unique_id=1503270636]
+transform = Transform3D(9.91542, 0, 0, 0, 1, 0, 0, 0, 6.2279787, 0.24689436, -2.5035608, 3.7708426)
+use_collision = true
+size = Vector3(0.96643066, 1, 2.2109375)
+
+[node name="Wall_Main" type="CSGBox3D" parent="StaticBody3D" unique_id=2059234287]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.0397124)
+size = Vector3(10, 5, 0.2)
+material = SubResource("StandardMaterial3D_y5j2w")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="StaticBody3D/Wall_Main" unique_id=1125220941 groups=["iron_shelf"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.49074602, 0.24300444)
+size = Vector3(4, 0.2, 1)
+material = SubResource("StandardMaterial3D_8qgih")
+script = ExtResource("1_gsa4e")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="StaticBody3D/Wall_Main" unique_id=1421411188 groups=["ItemShelf"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6754532, -0.41463137, 0.34325182)
+size = Vector3(4, 0.2, 0.35)
+material = SubResource("StandardMaterial3D_8qgih")
+script = ExtResource("2_4m35y")

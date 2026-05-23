@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://chj2r66objug5"]
+
+[ext_resource type="Script" uid="uid://b1lhviqg2ccki" path="res://anvil.gd" id="1_xv73q"]
+[ext_resource type="Script" uid="uid://ekwqmemgr8qq" path="res://craft_icon.gd" id="2_d2jl2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c45ob"]
+albedo_color = Color(0.096204735, 0.09620475, 0.096204735, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cm0pq"]
+albedo_color = Color(0.15127608, 0.15127608, 0.15127608, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_k141d"]
+material = SubResource("StandardMaterial3D_cm0pq")
+
+[sub_resource type="GDScript" id="GDScript_1sp7e"]
+script/source = "extends MeshInstance3D
+"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_644gk"]
+size = Vector3(0.495, 0.175, 0.53)
+
+[node name="Anvil" type="Node3D" unique_id=2069322574]
+
+[node name="Anvil" type="StaticBody3D" parent="." unique_id=477031203 groups=["Anvil"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, -1.265)
+script = ExtResource("1_xv73q")
+
+[node name="Anvil" type="CSGBox3D" parent="Anvil" unique_id=1875152366]
+use_collision = true
+size = Vector3(3, 1, 1)
+material = SubResource("StandardMaterial3D_c45ob")
+
+[node name="CraftIcon" type="StaticBody3D" parent="Anvil" unique_id=1857080470]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1381397, 0.63049364, 0.42356014)
+script = ExtResource("2_d2jl2")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Anvil/CraftIcon" unique_id=1460356149]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -0.31043577, -0.2118836)
+mesh = SubResource("BoxMesh_k141d")
+script = SubResource("GDScript_1sp7e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Anvil/CraftIcon" unique_id=638790681]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.09363043, -0.21309996)
+shape = SubResource("BoxShape3D_644gk")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Anvil/CraftIcon" unique_id=549217368]
+offset_left = 1.0
+offset_top = 3.0
+offset_right = 513.0
+offset_bottom = 515.0
+metadata/_edit_use_anchors_ = true
+
+[node name="CraftPanel" type="SubViewport" parent="Anvil/CraftIcon/SubViewportContainer" unique_id=761530154]
+handle_input_locally = false
+render_target_update_mode = 4
+
+[node name="OptionButton" type="OptionButton" parent="Anvil/CraftIcon/SubViewportContainer/CraftPanel" unique_id=974630390]
+offset_right = 32.0
+offset_bottom = 20.0
+
+[node name="CraftButton" type="Button" parent="Anvil/CraftIcon/SubViewportContainer/CraftPanel" unique_id=803764290]
+offset_top = 57.0
+offset_right = 8.0
+offset_bottom = 65.0
+text = "Craft
+"
