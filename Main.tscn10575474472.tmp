@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://deod0mu1518ub"]
+
+[ext_resource type="Script" uid="uid://jiqewv4q47hw" path="res://main.gd" id="1_glv2v"]
+[ext_resource type="PackedScene" uid="uid://bmvt5oabcv7u0" path="res://ingot_inv.tscn" id="6_3dxm6"]
+[ext_resource type="Script" uid="uid://c1arp2cuv6fps" path="res://back_door.gd" id="7_lgr22"]
+[ext_resource type="PackedScene" uid="uid://dmikq1na2j3po" path="res://Store.tscn" id="7_trn2v"]
+[ext_resource type="Script" uid="uid://cpl7yjg7lks6s" path="res://Interaction_Manager.gd" id="8_03owx"]
+[ext_resource type="PackedScene" uid="uid://chj2r66objug5" path="res://Anvil.tscn" id="8_trn2v"]
+[ext_resource type="Script" uid="uid://dg5ey5nabag8l" path="res://Item_Spawner.gd" id="9_wkp8b"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_trn2v"]
+albedo_color = Color(0.503528, 0.2599565, 0.007635703, 1)
+
+[node name="Main" type="Node3D" unique_id=1443291802 groups=["Main"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9645667, 0)
+script = ExtResource("1_glv2v")
+
+[node name="Light" type="OmniLight3D" parent="." unique_id=409198080]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 1, 2.4216824, -6.214371e-08)
+light_energy = 16.0
+light_size = 1.0
+omni_range = 15.31322
+
+[node name="IngotInv" parent="." unique_id=1095623684 instance=ExtResource("6_3dxm6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5821457, -1.4850755, -0.740964)
+
+[node name="BackDoor" type="CSGBox3D" parent="." unique_id=2064401061]
+transform = Transform3D(-0.001745386, 0, -0.99999845, 0, 1, 0, 0.99999845, 0, -0.001745386, -4.3664417, -1.0222282, -0.06508207)
+use_collision = true
+size = Vector3(0.9005127, 1.9824219, 0.19921875)
+material = SubResource("StandardMaterial3D_trn2v")
+script = ExtResource("7_lgr22")
+
+[node name="Interaction_Manager" type="Node3D" parent="." unique_id=1695990107]
+script = ExtResource("8_03owx")
+
+[node name="Item_Spawner" type="Node3D" parent="." unique_id=556956521]
+script = ExtResource("9_wkp8b")
+
+[node name="Anvil" parent="." unique_id=2069322574 instance=ExtResource("8_trn2v")]
+
+[node name="Store" parent="." unique_id=531010881 instance=ExtResource("7_trn2v")]

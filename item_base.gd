@@ -49,7 +49,7 @@ func interact():
 	self.reparent(Item_Shelf)
 	var down_offset = SHELF_OFFSETS.get(item, 0.3)
 	self.global_position = Item_Shelf.global_position + Vector3.UP * Item_Shelf.snap_height + slot["offset"] + Vector3.DOWN * down_offset
-	self.rotation_degrees.z = 90.0
+	self.rotation_degrees.z = 180.0
 	Anvil.clear_result()
 
 func highlight():

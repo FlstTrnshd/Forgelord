@@ -19,9 +19,19 @@ func spawn_weapon(pos: Vector3, item_name: String, metal_type: ItemBase.MetalTyp
 		push_error("No Anvil found in scene")
 		return
 	var data: WeaponData = WEAPONS[item_name]
-	var item = data.weapon_scene.instantiate()
-	anvil.add_child(item)
-	item.global_position = pos
+	
+	var body = StaticBody3D.new()
+	body.set_script(load("res://item_base.gd"))
+	
+	var mesh = data.weapon_scene.instantiate()
+	body.add_child(mesh)
+	
+	var collision = CollisionShape3D.new()
+	collision.shape = BoxShape3D.new()
+	body.add_child(collision)
+	
+	anvil.add_child(body)
+	body.global_position = pos
 
 func spawn_ingot(pos: Vector3, item_name: String, metal_type: ItemBase.MetalType):
 	if not INGOT_SCENES.has(item_name):
