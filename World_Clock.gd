@@ -31,7 +31,6 @@ func _process(delta):
 func _on_tick():
 	current_tick += 1
 	tick_passed.emit()
-	print("tick")
 	customer_spawn()
 	if current_tick >= TICKS_PER_DAY:
 		current_tick = 0

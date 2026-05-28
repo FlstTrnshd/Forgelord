@@ -11,4 +11,6 @@ base_strength = 50.0
 base_edge = 50.0
 base_balance = 50.0
 ingot_cost = 2
+wood_cost = 1.0
+leather_cost = 2.0
 metadata/_custom_type_script = "uid://c6tlkb0s10oho"

@@ -19,6 +19,21 @@ func _ready():
 	$CraftIcon.hide()
 	$CraftIcon/SubViewportContainer.hide()
 
+func can_receive(item) -> bool:
+	return item is Ingot
+
+func receive(item):
+	if has_crafted_result():
+		print("Clear the anvil first!")
+		return
+	var slot = get_free_slot()
+	if slot == null:
+		print("Anvil is full!")
+		return
+	slot["occupant"] = item
+	item.global_position = _anvil.global_position + Vector3.UP * snap_height + slot["offset"]
+	update_hammer()
+
 func get_free_slot():
 	for slot in slots:
 		if slot["occupant"] == null:

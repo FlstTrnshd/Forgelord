@@ -33,6 +33,11 @@ func spawn_weapon(pos: Vector3, item_name: String, metal_type: ItemBase.MetalTyp
 	anvil.add_child(body)
 	body.global_position = pos
 	body.rotation_degrees.z = 90.0
+	body.metal_type = metal_type
+	body.item = data.weapon_name
+	body.apply_material_modifiers(data.base_strength, data.base_edge)
+	body.balance = data.base_balance
+	print(body.item, " - STR:", body.strength, " EDGE:", body.edge, " BAL:", body.balance)
 
 func spawn_ingot(pos: Vector3, item_name: String, metal_type: ItemBase.MetalType):
 	if not INGOT_SCENES.has(item_name):

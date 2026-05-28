@@ -10,4 +10,5 @@ weapon_scene = ExtResource("2_m4auh")
 base_strength = 30.0
 base_edge = 60.0
 base_balance = 70.0
+wood_cost = 4.0
 metadata/_custom_type_script = "uid://c6tlkb0s10oho"

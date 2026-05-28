@@ -8,9 +8,14 @@ enum MetalType {IRON, STEEL, BRONZE, SILVER, GOLD}
 var item := "unnamed"
 var item_type: ItemType = ItemType.INGOT
 
+@export var carriable: bool = false
+
+func can_carry() -> bool:
+	return carriable
+
 # Weapon stats
 var strength: float = 0.0
-var sharpness: float = 0.0
+var edge: float = 0.0
 var balance: float = 0.0
 var metal_type: MetalType = MetalType.IRON
 
@@ -31,10 +36,10 @@ const SHELF_OFFSETS = {
 func apply_material_modifiers(base_strength: float, base_sharpness: float):
 	var mod = METAL_MODIFIERS.get(metal_type, {"strength": 1.0, "sharpness": 1.0})
 	strength = base_strength * mod["strength"]
-	sharpness = base_sharpness * mod["sharpness"]
+	edge = base_sharpness * mod["sharpness"]
 
 func get_average_quality() -> float:
-	return (strength + sharpness + balance) / 3.0
+	return (strength + edge + balance) / 3.0
 
 func get_price_modifier() -> float:
 	return get_average_quality()
