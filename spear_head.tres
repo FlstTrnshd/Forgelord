@@ -5,6 +5,7 @@
 
 [resource]
 script = ExtResource("1_04dsv")
+weapon_name = "Spear_Head"
 weapon_scene = ExtResource("2_m4auh")
 base_strength = 30.0
 base_edge = 60.0

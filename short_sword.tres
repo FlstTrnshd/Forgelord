@@ -5,6 +5,7 @@
 
 [resource]
 script = ExtResource("1_ltqmd")
+weapon_name = "ShortSword_Blade"
 weapon_scene = ExtResource("2_ge5m3")
 base_strength = 50.0
 base_edge = 50.0

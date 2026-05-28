@@ -32,6 +32,7 @@ func spawn_weapon(pos: Vector3, item_name: String, metal_type: ItemBase.MetalTyp
 	
 	anvil.add_child(body)
 	body.global_position = pos
+	body.rotation_degrees.z = 90.0
 
 func spawn_ingot(pos: Vector3, item_name: String, metal_type: ItemBase.MetalType):
 	if not INGOT_SCENES.has(item_name):
