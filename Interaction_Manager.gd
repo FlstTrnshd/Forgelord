@@ -90,3 +90,11 @@ func enter_anvil_view(anvil: Node3D):
 	original_rot = cam.rotation
 	anvil_view_pos = anvil.global_position + Vector3(0, 3, 0)
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	player.lock()
+
+func exit_anvil_view():
+	anvil_view = false
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	cam.global_position = original_pos
+	cam.rotation = original_rot
+	player.unlock()

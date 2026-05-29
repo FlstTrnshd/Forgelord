@@ -16,6 +16,9 @@ func receive(item):
 	if slot == null:
 		print("Shelf is full!")
 		return
+	var anvil = get_tree().get_first_node_in_group("Anvil")
+	if anvil:
+		anvil.clear_result()
 	slot["occupant"] = item
 	var down_offset = ItemBase.SHELF_OFFSETS.get(item.item, 0.3)
 	item.global_position = global_position + Vector3.UP * snap_height + slot["offset"] + Vector3.DOWN * down_offset
