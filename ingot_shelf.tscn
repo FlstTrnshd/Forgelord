@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://bywbp40wmu0ra"]
+
+[ext_resource type="PackedScene" uid="uid://bkkdcjf74ftj8" path="res://slot.tscn" id="1_dapu5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dapu5"]
+size = Vector3(2, 0.1, 0.3)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vvnqi"]
+albedo_color = Color(0.26518956, 0.16909474, 4.813075e-08, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_vvnqi"]
+material = SubResource("StandardMaterial3D_vvnqi")
+
+[node name="StaticBody3D" type="StaticBody3D" unique_id=1816286255]
+collision_layer = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1490225354]
+shape = SubResource("BoxShape3D_dapu5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=852398902]
+transform = Transform3D(2, 0, 0, 0, 0.1, 0, 0, 0, 0.6, 0, 0, 0)
+mesh = SubResource("BoxMesh_vvnqi")
+
+[node name="Marker3D" parent="." unique_id=915658487 instance=ExtResource("1_dapu5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 0.15, 0)
+
+[node name="Marker3D2" parent="." unique_id=1240539138 instance=ExtResource("1_dapu5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.55, 0.15, 0)
+
+[node name="Marker3D3" parent="." unique_id=221880542 instance=ExtResource("1_dapu5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.15, 0)
+
+[node name="Marker3D4" parent="." unique_id=947011468 instance=ExtResource("1_dapu5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05, 0.15, 0)
+
+[node name="Marker3D5" parent="." unique_id=2021915749 instance=ExtResource("1_dapu5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, 0.15, 0)
+
+[node name="Marker3D6" parent="." unique_id=1941593039 instance=ExtResource("1_dapu5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45, 0.15, 0)
+
+[node name="Marker3D7" parent="." unique_id=571028854 instance=ExtResource("1_dapu5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7, 0.15, 0)

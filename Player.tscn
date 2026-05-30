@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://cip6mpuixjlmm"]
+
+[ext_resource type="Script" uid="uid://d10bevcl1fkkm" path="res://player.gd" id="1_xhfnw"]
+[ext_resource type="Script" uid="uid://7awo46snjjbm" path="res://camera.gd" id="2_kpjcp"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0rwas"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_xhfnw"]
+
+[node name="CharacterBody3D" type="CharacterBody3D" unique_id=293584092 groups=["player"]]
+script = ExtResource("1_xhfnw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=856368942]
+shape = SubResource("CapsuleShape3D_0rwas")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D" unique_id=2119437527]
+mesh = SubResource("CapsuleMesh_xhfnw")
+skeleton = NodePath("../..")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=869075476]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.64306307, -0.0034685135)
+script = ExtResource("2_kpjcp")
+
+[node name="RayCast3D" type="RayCast3D" parent="Camera3D" unique_id=233434949]
+transform = Transform3D(1, 0, 0, 0, -1.1675235e-07, -1, 0, 2.6709824, -4.371139e-08, 0, 1.7218031e-08, -0.39390266)
+collision_mask = 2
+
+[node name="Hand_Position" type="Marker3D" parent="Camera3D" unique_id=1242661301]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.2325941, -0.47796485, -0.6144854)

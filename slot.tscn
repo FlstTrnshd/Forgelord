@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bkkdcjf74ftj8"]
+
+[ext_resource type="Script" uid="uid://c4qdj320cl0ke" path="res://shelf_slot_class.gd" id="1_c24ra"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_im8dc"]
+size = Vector3(0.25, 0.2, 0.4)
+
+[node name="Marker3D" type="Marker3D" unique_id=915658487]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1749138458]
+collision_layer = 2
+script = ExtResource("1_c24ra")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1262607686]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0019545555, 0, 0)
+shape = SubResource("BoxShape3D_im8dc")

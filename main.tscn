@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://df1g6lxit1ah8"]
+
+[ext_resource type="PackedScene" uid="uid://do5la4ot1a8rw" path="res://Forge.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://cip6mpuixjlmm" path="res://Player.tscn" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://cy8qfplpujj1f" path="res://ingot.tscn" id="3_1bvp3"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_h2yge"]
+
+[sub_resource type="Sky" id="Sky_1bvp3"]
+sky_material = SubResource("ProceduralSkyMaterial_h2yge")
+
+[sub_resource type="Environment" id="Environment_h2yge"]
+background_mode = 2
+sky = SubResource("Sky_1bvp3")
+
+[node name="Main" type="Node3D" unique_id=1077547312]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1148911128]
+environment = SubResource("Environment_h2yge")
+
+[node name="Node3D" parent="." unique_id=1270374139 instance=ExtResource("1_ig7tw")]
+
+[node name="CharacterBody3D" parent="." unique_id=293584092 instance=ExtResource("2_h2yge")]
+
+[node name="Node3D2" parent="." unique_id=392491796 instance=ExtResource("3_1bvp3")]

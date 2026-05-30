@@ -39,7 +39,7 @@ func _on_tick():
 func customer_spawn():
 	if stall_occ:
 		return
-	if randf() > 0.05:  # 5% chance per tick
+	if randf() > 0.05:
 		return
 	stall_occ = true
 	customer_ready.emit()
@@ -63,11 +63,3 @@ func get_date() -> Dictionary:
 		"month": MONTHS[month - 1],
 		"year": year
 	}
-
-func advance_day():
-	print("Day Ended")
-	print(Kingdoms.relations)
-	for contract in PlayerStatus.active_contracts:
-		print(contract.weapon_type, " - ", contract.weapon_material, " - ", contract.price)
-	Kingdoms.RelationTick()
-	current_tick = TICKS_PER_DAY

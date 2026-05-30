@@ -1,0 +1,13 @@
+res://World_Clock.gd
+res://Player.tscn
+res://player.gd
+res://camera.gd
+res://Forge.tscn
+res://test.gd
+res://interactable.gd
+res://main.tscn
+res://ingot.tscn
+res://ingot_shelf.tscn
+res://ingot_shelf.gd
+res://shelf_slot_class.gd
+res://slot.tscn
