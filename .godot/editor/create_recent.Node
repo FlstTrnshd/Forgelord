@@ -1,9 +1,9 @@
-Node3D
+StaticBody3D
 CollisionShape3D
+Node3D
 MeshInstance3D
 CharacterBody3D
 CSGBox3D
-StaticBody3D
 Label
 CenterContainer
 CanvasLayer
