@@ -1,8 +1,8 @@
-Marker3D
-StaticBody3D
 CollisionShape3D
-WorldEnvironment
 MeshInstance3D
+StaticBody3D
+Marker3D
+WorldEnvironment
 CSGBox3D
 RigidBody3D
 ShapeCast3D

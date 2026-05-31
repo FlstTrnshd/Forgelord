@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://chj2r66objug5"]
+
+[ext_resource type="PackedScene" uid="uid://dcao06k15o7c0" path="res://anvil_slots.tscn" id="1_8lr0t"]
+[ext_resource type="PackedScene" uid="uid://doyg46tqhd4rj" path="res://Hammer.tscn" id="2_xv73q"]
+[ext_resource type="Script" uid="uid://df42cheykixdk" path="res://hammer.gd" id="3_d2jl2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6hkun"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_8lr0t"]
+material = SubResource("StandardMaterial3D_6hkun")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xv73q"]
+
+[node name="StaticBody3D" type="StaticBody3D" unique_id=1547272412]
+collision_layer = 3
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=931844499]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+layers = 2
+mesh = SubResource("BoxMesh_8lr0t")
+
+[node name="Marker3D" parent="." unique_id=915658487 instance=ExtResource("1_8lr0t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0.6, 0)
+
+[node name="Marker3D2" parent="." unique_id=190462420 instance=ExtResource("1_8lr0t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
+
+[node name="Marker3D3" parent="." unique_id=1136120082 instance=ExtResource("1_8lr0t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, 0.6, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=504361513]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_xv73q")
+
+[node name="StaticBody3D" parent="." unique_id=591159580 instance=ExtResource("2_xv73q")]
+transform = Transform3D(0.7514254, 0, -0.6598181, 0, 1, 0, 0.6598181, 0, 0.7514254, 1.0084643, 0.5541573, 0.34549356)
+script = ExtResource("3_d2jl2")

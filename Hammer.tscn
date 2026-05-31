@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://doyg46tqhd4rj"]
+
+[ext_resource type="Script" uid="uid://df42cheykixdk" path="res://hammer.gd" id="1_l373q"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_11ouq"]
+albedo_color = Color(0.3947175, 0.2874129, 0.22782734, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_11ouq"]
+material = SubResource("StandardMaterial3D_11ouq")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_11ouq"]
+size = Vector3(0.5, 0.1, 0.2)
+
+[node name="StaticBody3D" type="StaticBody3D" unique_id=591159580]
+script = ExtResource("1_l373q")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=496837407]
+transform = Transform3D(0.5, 0, 0, 0, 0.1, 0, 0, 0, 0.2, 0, 0, 0)
+mesh = SubResource("BoxMesh_11ouq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=103730973]
+shape = SubResource("BoxShape3D_11ouq")

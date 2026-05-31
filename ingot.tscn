@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bhkt7npdrknff" path="res://test.gd" id="1_2bcrf"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_psx6r"]
-size = Vector3(0.2, 0.2, 0.5)
+size = Vector3(0.25, 0.2, 0.5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2bcrf"]
 albedo_color = Color(0.1728327, 0.17283267, 0.17283267, 1)
@@ -21,5 +21,5 @@ type = "ingot"
 shape = SubResource("BoxShape3D_psx6r")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=428131052]
-transform = Transform3D(0.19999999, 0, 0, 0, 0.19999999, 0, 0, 0, 0.5, 0, 0, 0)
+transform = Transform3D(0.25, 0, 0, 0, 0.2, 0, 0, 0, 0.5, 0, 0, 0)
 mesh = SubResource("BoxMesh_q4uuw")

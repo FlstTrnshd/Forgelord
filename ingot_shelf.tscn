@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bywbp40wmu0ra"]
 
-[ext_resource type="PackedScene" uid="uid://bkkdcjf74ftj8" path="res://slot.tscn" id="1_dapu5"]
+[ext_resource type="PackedScene" uid="uid://bkkdcjf74ftj8" path="res://ingot_shelf_slot.tscn" id="1_dapu5"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dapu5"]
 size = Vector3(2, 0.1, 0.3)
@@ -12,7 +12,7 @@ albedo_color = Color(0.26518956, 0.16909474, 4.813075e-08, 1)
 material = SubResource("StandardMaterial3D_vvnqi")
 
 [node name="StaticBody3D" type="StaticBody3D" unique_id=1816286255]
-collision_layer = 2
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1490225354]
 shape = SubResource("BoxShape3D_dapu5")

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://do5la4ot1a8rw"]
 
 [ext_resource type="PackedScene" uid="uid://bywbp40wmu0ra" path="res://ingot_shelf.tscn" id="1_q4uuw"]
+[ext_resource type="PackedScene" uid="uid://chj2r66objug5" path="res://Anvil.tscn" id="2_psx6r"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q4uuw"]
 albedo_color = Color(0.14428279, 0.089901544, 0.055120833, 1)
@@ -30,4 +31,7 @@ size = Vector3(1, 5, 20)
 material = SubResource("StandardMaterial3D_hvg8k")
 
 [node name="StaticBody3D" parent="." unique_id=1816286255 instance=ExtResource("1_q4uuw")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -6.5332627, 0.0335778, 2.8557798e-07)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -6.5332627, 0.0335778, 3.8035042)
+
+[node name="StaticBody3D2" parent="." unique_id=1547272412 instance=ExtResource("2_psx6r")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -4.397368, -0.8034103, 1.3264254)
