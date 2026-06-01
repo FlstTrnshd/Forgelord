@@ -16,11 +16,27 @@ func interact(held, item):
 	print("Yo")
 	if held == true:
 		if item.type == "ingot":
-			item.reparent(marker)
+			item.reparent(self)
 			item.global_position = marker.global_position
 			item.rotation = Vector3(0, 0, 0)
 			var player = get_tree().get_first_node_in_group("player")
 			player.held = false
 			player.item_held = null
-	else:
-		print("Nothing Held")
+			item.placed = true
+			var parent = self
+			while not parent is Bench or parent == get_tree().root:
+				parent = parent.get_parent()
+			if parent is Bench:
+				parent.assigned_slots += 1
+				print(parent.assigned_slots)
+				print(item.get_parent())
+
+func removed_slot():
+	print("Uhhh")
+	var parent = self
+	while not parent is Bench or parent == get_tree().root:
+		parent = parent.get_parent()
+	if parent is Bench:
+		parent.assigned_slots -= 1
+		print(parent.assigned_slots)
+		

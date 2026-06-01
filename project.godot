@@ -27,6 +27,7 @@ Kingdoms="*res://Kingdoms.gd"
 [global_group]
 
 player=""
+Anvil=""
 
 [input]
 

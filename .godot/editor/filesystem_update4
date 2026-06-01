@@ -1,0 +1,9 @@
+res://ingot_shelf.tscn
+res://Anvil.tscn
+res://Hammer.tscn
+res://hammer.gd
+res://anvil.gd
+res://player.gd
+res://camera.gd
+res://Player.tscn
+res://main.tscn

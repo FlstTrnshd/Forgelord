@@ -12,7 +12,6 @@ albedo_color = Color(0.1728327, 0.17283267, 0.17283267, 1)
 material = SubResource("StandardMaterial3D_2bcrf")
 
 [node name="StaticBody3D" type="StaticBody3D" unique_id=1540361304]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7378945, 0, 0)
 collision_layer = 2
 script = ExtResource("1_2bcrf")
 type = "ingot"
