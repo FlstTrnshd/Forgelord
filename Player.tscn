@@ -26,4 +26,4 @@ transform = Transform3D(1, 0, 0, 0, -1.1675235e-07, -1, 0, 2.6709824, -4.371139e
 collision_mask = 2
 
 [node name="Hand_Position" type="Marker3D" parent="Camera3D" unique_id=1242661301]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.2325941, -0.47796485, -0.6144854)
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.52927744, -0.47796485, -0.6144854)

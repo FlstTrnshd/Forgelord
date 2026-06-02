@@ -28,6 +28,7 @@ Kingdoms="*res://Kingdoms.gd"
 
 player=""
 Anvil=""
+Weapon=""
 
 [input]
 

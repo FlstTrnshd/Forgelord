@@ -1,9 +1,9 @@
-res://ingot_shelf.tscn
-res://Anvil.tscn
-res://Hammer.tscn
-res://hammer.gd
-res://anvil.gd
-res://player.gd
-res://camera.gd
-res://Player.tscn
+res://Weapon.tscn
 res://main.tscn
+res://weapon.gd
+res://shelf_slot_class.gd
+res://anvil_slots.tscn
+res://Player.tscn
+res://ingot.tscn
+res://player.gd
+res://hammer.gd

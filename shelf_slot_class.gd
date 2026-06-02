@@ -2,6 +2,7 @@ class_name shelf_slot
 extends StaticBody3D
 
 var marker
+var occupied = false
 
 func _ready():
 	marker = get_parent()
@@ -15,7 +16,7 @@ func _holding_changed(is_holding):
 func interact(held, item):
 	print("Yo")
 	if held == true:
-		if item.type == "ingot":
+		if item.type == "ingot" or "Weapon" and occupied == false:
 			item.reparent(self)
 			item.global_position = marker.global_position
 			item.rotation = Vector3(0, 0, 0)
@@ -23,6 +24,7 @@ func interact(held, item):
 			player.held = false
 			player.item_held = null
 			item.placed = true
+			occupied = true
 			var parent = self
 			while not parent is Bench or parent == get_tree().root:
 				parent = parent.get_parent()
@@ -39,4 +41,5 @@ func removed_slot():
 	if parent is Bench:
 		parent.assigned_slots -= 1
 		print(parent.assigned_slots)
+		occupied = false
 		

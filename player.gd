@@ -23,12 +23,16 @@ func _physics_process(delta):
 	var input = Input.get_vector("move_left", "move_right", "move_forward", "move_backwards")
 	var direction = (transform.basis * Vector3(input.x, 0, input.y)).normalized()
 	
-	if direction and movable == true:
-		velocity.x = direction.x * SPEED
-		velocity.z = direction.z * SPEED
-	elif movable == true:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.z = move_toward(velocity.z, 0, SPEED)
+	if movable:
+		if direction:
+			velocity.x = direction.x * SPEED
+			velocity.z = direction.z * SPEED
+		else:
+			velocity.x = move_toward(velocity.x, 0, SPEED)
+			velocity.z = move_toward(velocity.z, 0, SPEED)
+	else:
+		velocity.x = 0.0
+		velocity.z = 0.0
 	
 	move_and_slide()
 
@@ -37,3 +41,6 @@ func _input(event: InputEvent) -> void:
 		anvil_view = false
 		movable = true
 		print("Should Move Now")
+	elif event.is_action_pressed("tab"):
+		var weapon = get_tree().get_first_node_in_group("Weapon")
+		weapon.get_mesh("Greatsword", "Blade")
