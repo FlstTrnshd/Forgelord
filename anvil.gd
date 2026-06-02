@@ -12,7 +12,7 @@ var forge_confirmed = true
 var PH_Instance = null
 
 func _input(event: InputEvent) -> void:
-	if event is InputEventMouseButton and event.pressed == false and forge_confirmed == false and player.movable == false:
+	if event.is_action_pressed("confirm") and forge_confirmed == false:
 		print("Trust")
 		confirm_forging()
 	elif event.is_action_pressed("tab") and forge_confirmed == false:
@@ -34,11 +34,11 @@ func begin_forging():
 		instance.rotation_degrees = Vector3(90.0, 0.0, 90.0)
 		instance.get_mesh(weapon, "Blade")
 		PH_Instance = instance
-		forge_confirmed = false
 		set_process_input(false)
 		await get_tree().process_frame
 		await get_tree().process_frame
 		set_process_input(true)
+		forge_confirmed = false
 
 func confirm_forging():
 	for child in get_children():
