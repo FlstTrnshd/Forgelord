@@ -38,9 +38,9 @@ func _physics_process(delta):
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("tab") and movable != true:
-		anvil_view = false
-		movable = true
-		print("Should Move Now")
-	elif event.is_action_pressed("tab"):
-		var weapon = get_tree().get_first_node_in_group("Weapon")
-		weapon.get_mesh("Greatsword", "Blade")
+		free_movement()
+
+func free_movement():
+	anvil_view = false
+	movable = true
+	print("Should Move Now")

@@ -7,3 +7,7 @@ res://Player.tscn
 res://ingot.tscn
 res://player.gd
 res://hammer.gd
+res://anvil.gd
+res://Hammer.tscn
+res://Anvil.tscn
+res://test.gd
