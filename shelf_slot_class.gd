@@ -19,7 +19,9 @@ func interact(held, item):
 		if item.type == "ingot" or "Weapon" and occupied == false:
 			item.reparent(self)
 			item.global_position = marker.global_position
-			item.rotation = Vector3(0, 0, 0)
+			item.rotation = Vector3(0.0, 0.0, 0.0)
+			if item.type == "Weapon":
+				item.rotation_degrees = Vector3(90.0, 90.0, 0.0)
 			var player = get_tree().get_first_node_in_group("player")
 			player.held = false
 			player.item_held = null
@@ -32,6 +34,8 @@ func interact(held, item):
 				parent.assigned_slots += 1
 				print(parent.assigned_slots)
 				print(item.get_parent())
+			if parent.has_method("auto_craft"):
+				parent.auto_craft()
 
 func removed_slot():
 	print("Uhhh")

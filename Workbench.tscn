@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://5xy0uu80awkq"]
+
+[ext_resource type="PackedScene" uid="uid://dcao06k15o7c0" path="res://anvil_slots.tscn" id="1_iwmi6"]
+[ext_resource type="Script" uid="uid://c0rsskcpybje" path="res://workbench.gd" id="1_jxctb"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jxctb"]
+albedo_color = Color(0.31805754, 0.17163485, 7.219613e-08, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_mbgn7"]
+material = SubResource("StandardMaterial3D_jxctb")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_eacyk"]
+size = Vector3(2, 0.8, 0.8)
+
+[node name="StaticBody3D" type="StaticBody3D" unique_id=1214286609]
+collision_layer = 2
+script = ExtResource("1_jxctb")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1434104725]
+transform = Transform3D(2, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
+mesh = SubResource("BoxMesh_mbgn7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1737456896]
+shape = SubResource("BoxShape3D_eacyk")
+
+[node name="Marker3D" parent="." unique_id=915658487 instance=ExtResource("1_iwmi6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.50241065, 0)

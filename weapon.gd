@@ -20,6 +20,7 @@ func get_mesh(weapon: String, segment: String):
 	if not ResourceLoader.exists(path):
 		print("Kill Yourself (Cuck)" + path)
 	else:
+		weapon_type = weapon
 		var instance = load(path).instantiate()
 		instance.scale = Vector3(0.5, 0.5, 0.5)
 		add_child(instance)

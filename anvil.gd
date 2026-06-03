@@ -1,11 +1,8 @@
-extends StaticBody3D
-class_name Bench
+extends Bench
 
 const WEAPON_INGOT_COUNT = {1: "Dagger", 2: "Shortsword", 3: "Greatsword"}
 @onready var WeaponScne = load("res://Weapon.tscn")
 @onready var player = get_tree().get_first_node_in_group("player")
-
-var assigned_slots = 0
 
 var forge_confirmed = true
 
@@ -34,10 +31,6 @@ func begin_forging():
 		instance.rotation_degrees = Vector3(90.0, 0.0, 90.0)
 		instance.get_mesh(weapon, "Blade")
 		PH_Instance = instance
-		set_process_input(false)
-		await get_tree().process_frame
-		await get_tree().process_frame
-		set_process_input(true)
 		forge_confirmed = false
 
 func confirm_forging():
